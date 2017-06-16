@@ -21,8 +21,18 @@ class HomeList extends Component {
   render() {
     console.log('homes: ', this.state.homes);
     return (
-      <div>
-        <h1>Hello World</h1>
+      <div className="home-list-container">
+        <div className="list-item-container">
+
+        </div>
+        {
+          this.state.homes.map((item, index) => {
+            let home = item.home;
+            return (
+              <h4 key={ index }>{ home.streetName }</h4>
+            )
+          })
+        }
       </div>
     );
   }

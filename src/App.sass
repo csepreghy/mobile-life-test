@@ -1,11 +1,52 @@
+// 1 - Settings
+
+$primary-color: #990eff
+$secondary-color: #f06672
+
+$navbar-height: 60px
+
+// 2 - Generic
+
 *
   margin: 0
   padding: 0
   box-sizing: border-box
 
-html, body 
+html, body, #the-universe, .app-container
   width: 100%
   height: 100%
+  overflow: hidden
 
-h1 
-  color: red
+// 3 - Elements
+
+// 4 - Objects
+
+// 5 - Components
+
+//Navbar 
+
+.navbar-container
+  height: $navbar-height
+  width: 100%
+  background-color: blue
+
+//Home List
+
+.home-list-container
+  display: inline-block
+  width: 300px
+  height: calc(100% - #{$navbar-height})
+  float: left
+  background-color: red
+
+//Map
+
+.map-container
+  display: inline-block
+  width: calc(100% - 300px)
+  height: calc(100% - #{$navbar-height})
+  float: right
+  background-color: green
+
+
+// 6 - Utilities

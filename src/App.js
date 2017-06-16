@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import HomeList from './HomeList';
 import './App.css';
+
+import Navbar from './components/Navbar';
+import Map from './components/Map';
+import HomeList from './components/HomeList';
 
 class App extends Component {
 
@@ -12,7 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
+        <Navbar />
         <HomeList />
+        <Map />
       </div>
     );
   }
