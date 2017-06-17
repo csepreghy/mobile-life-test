@@ -4,6 +4,8 @@
 
 $primary-color: #990eff
 $secondary-color: #f06672
+$text-color: #373c64
+$grey: #ebebeb
 
 $navbar-height: 60px
 
@@ -19,8 +21,12 @@ html, body, #the-universe, .app-container
   height: 100%
   overflow: hidden
   font-family: 'Roboto', sans-serif;
+  color: $text-color
 
 // 3 - Elements
+
+sup
+  font-size: 10px
 
 // 4 - Objects
 
@@ -31,55 +37,80 @@ html, body, #the-universe, .app-container
 .navbar-container
   height: $navbar-height
   width: 100%
-  background-color: blue
 
 //Home List
 
 .home-list-container
   display: inline-block
-  width: 300px
+  width: 50%
   height: calc(100% - #{$navbar-height})
   float: left
+  flex-wrap: wrap
   overflow-y: auto
 
-  .list-item
+  .list-items-container
+    padding: 20px
     display: flex
-    flex-direction: column
-    justify-content: space-between
-    height: 200px
+    flex-wrap: wrap
+    justify-content: space-around
+    flex-direction: row
+    background-color: $grey
 
-    .list-header
-      padding: 5px
-      flex-shrink: 1
-      background-color: $primary-color
-      display: flex
-      flex-direction: column
-      justify-content: space-between
+    .list-item
+      width: 45%
+      height: 340px
+      margin-top: 15px
+      margin-bottom: 15px
+      background-color: #fff
 
-      h2
-        font-size: 16px
-        font-weight: 500
+      .img-container
+        width: 100%
+        position: relative
 
-      h3
-        font-size: 16px
-        font-weight: 400
-      
-    .list-body
-      flex-grow: 4
-      background-color: blue
-    
-    .list-footer
-      flex-grow: 1
-      background-color: red
+        .img-title-background
+          position: absolute
+          bottom: 4px
+          left: 0
+          width: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          height: 30px
+          background-color: $primary-color
+          opacity: 0.6
+        
+        p
+          position: absolute
+          bottom: 9px
+          left: 5px
+          color: #fff
+
+        img
+          width: 100%
+
+      &__content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+          
+        &-body
+          padding: 8px
+          display: flex
+          flex-direction: column
+          justify-content: space-around
+          
+          h3
+            font-size: 16px
+            color: #373c64
+            font-weight: 500
 
 //Map
 
 .map-container
   display: inline-block
-  width: calc(100% - 300px)
+  width: 50%
   height: calc(100% - #{$navbar-height})
   float: right
-  background-color: green
 
 
 // 6 - Utilities

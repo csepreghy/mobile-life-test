@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import NumericLabel from 'react-pretty-numbers';
-import { numberFormatting } from '../config/numberFormatting';
 import { FormattedNumber, IntlProvider } from 'react-intl';
 
 class HomeList extends Component {
@@ -21,6 +19,10 @@ class HomeList extends Component {
       });
   }
 
+  loadPlaceholderImg(e) {
+    e.target.src = '/no-house-photo.jpg'
+  }
+
   render() {
     console.log('homes: ', this.state.homes);
     return (
@@ -29,21 +31,35 @@ class HomeList extends Component {
           {
             this.state.homes.map((item, index) => {
               let home = item.home;
+              if (!home.imageUrl) {
+                home.imageUrl = './no-house-photo.jpg';
+              }
+              if (item.affordability) {
+                console.log('item afford: ', item.affordability.disposableIncomeChange);
+              } else {
+                console.log('item: ', item);
+              }
               return (
                 <div className="list-item" key={ index }>
-                  <div className="list-header">
-                    <h2>{ home.streetName } { home.streetNumber }</h2>
-                    <h3>{ home.postalCode }, { home.city }</h3>
+                  <div className="img-container">
+                    <div className="img-title-background"></div>
+                    <p>{ home.streetName + ' ' + home.streetNumber }</p>
+                    <img onError={ this.loadPlaceholderImg } src={ home.imageUrl } />
                   </div>
-                  <div className="list-body numeric-wrapper">
-                    <IntlProvider locale="en">
-                      <FormattedNumber formatStyle="currency"
-                                       value={ home.price } />
-                    </IntlProvider>
-                    <span> kr.</span>
-                  </div>
-                  <div className="list-footer">
-                    <p>footer</p>
+                  <div className="list-item__content">
+                    <div className="list-item__content-body">
+                      <h3>{ home.postalCode }, { home.city }</h3>
+                      <p>
+                        <span>Price: </span>
+                        <IntlProvider locale="en">
+                          <FormattedNumber formatStyle="currency"
+                                           value={ home.price } />
+                        </IntlProvider>
+                        <span> kr.</span>
+                      </p>
+                      <p><span>Area: </span><span>{ home.areaHome }m<sup>2</sup></span></p>
+                      <p><span>Number of Rooms: </span><span>{ home.roomCount }</span></p>
+                    </div>
                   </div>
                 </div>
               )
