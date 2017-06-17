@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import { ReactGoogleMaps } from './ReactGoogleMaps';
 import _ from 'underscore';
 
 console.log('ReactGoogleMaps: ', ReactGoogleMaps);
-
-var i = 0;
-var google = window.google;
 
 const markers = [
     {
