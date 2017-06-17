@@ -65,10 +65,13 @@ sup
       .img-container
         width: 100%
         position: relative
+        overflow: hidden
+        font-size: 0 //Comment this line out and see what happens with the images in the grid.
+        //Gotta love CSS sometimes
 
         .img-title-background
           position: absolute
-          bottom: 4px
+          bottom: 0
           left: 0
           width: 100%
           display: flex
@@ -77,15 +80,19 @@ sup
           height: 30px
           background-color: $primary-color
           opacity: 0.6
+          z-index: 100
         
         p
           position: absolute
           bottom: 9px
           left: 5px
           color: #fff
+          z-index: 110
+          font-size: 16px
 
         img
           width: 100%
+          transition: 0.25s
 
       &__content
         display: flex
@@ -103,6 +110,11 @@ sup
             font-size: 16px
             color: #373c64
             font-weight: 500
+      
+      &:hover
+        img
+          transform: scale(1.1);
+        
 
 //Map
 
