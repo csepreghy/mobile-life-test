@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import './App.css';
 
 import Navbar from './components/Navbar';
@@ -10,14 +12,24 @@ class App extends Component {
   constructor(props) {
     super();
 
+    this.state = {
+      homes: []
+    }
+  }
+
+  componentWillMount() {
+    axios.get('./homes.json')
+      .then((data) => {
+        this.setState({ homes: data.data.homes })
+      });
   }
 
   render() {
     return (
       <div className="app-container">
         <Navbar />
-        <HomeList />
-        <Map />
+        <HomeList homes={ this.state.homes }/>
+        <Map homes={ this.state.homes }/>
       </div>
     );
   }

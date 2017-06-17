@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { ReactGoogleMaps } from './ReactGoogleMaps';
 import _ from 'underscore';
 
-console.log('ReactGoogleMaps: ', ReactGoogleMaps);
-
 const markers = [
     {
       position: {
@@ -18,8 +16,16 @@ const markers = [
 class Map extends Component {
 
   constructor(props) {
-    super();
+    super(props);
 
+  }
+
+  componentDidMount() {
+    console.log('this.props.homes: ', this.props.homes);
+    for (var i = 0; i < this.props.homes.length; i++) {
+      var element = this.props.homes[i];
+      console.log('element: ', element);
+    }
   }
 
   render() {
