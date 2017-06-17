@@ -31,14 +31,11 @@ class HomeList extends Component {
           {
             this.state.homes.map((item, index) => {
               let home = item.home;
+              
               if (!home.imageUrl) {
                 home.imageUrl = './no-house-photo.jpg';
               }
-              if (item.affordability) {
-                console.log('item afford: ', item.affordability.disposableIncomeChange);
-              } else {
-                console.log('item: ', item);
-              }
+
               return (
                 <div className="list-item" key={ index }>
                   <div className="img-container">

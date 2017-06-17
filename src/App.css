@@ -33,8 +33,7 @@ sup {
     flex-direction: row;
     background-color: #ebebeb; }
     .home-list-container .list-items-container .list-item {
-      width: 45%;
-      height: 340px;
+      width: 46%;
       margin-top: 15px;
       margin-bottom: 15px;
       background-color: #fff; }
@@ -62,7 +61,8 @@ sup {
       .home-list-container .list-items-container .list-item__content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; }
+        justify-content: space-between;
+        height: 100px; }
         .home-list-container .list-items-container .list-item__content-body {
           padding: 8px;
           display: flex;
