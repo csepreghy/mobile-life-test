@@ -20,16 +20,17 @@ class App extends Component {
   componentWillMount() {
     axios.get('./homes.json')
       .then((data) => {
-        this.setState({ homes: data.data.homes })
+        this.setState({ homes: data.data.homes });
       });
   }
 
   render() {
+    console.log('app render ', this.state.homes);
     return (
       <div className="app-container">
         <Navbar />
         <HomeList homes={ this.state.homes }/>
-        <Map homes={ this.state.homes }/>
+        <Map homes={ this.state.homes }/>
       </div>
     );
   }
