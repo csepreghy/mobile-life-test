@@ -29,7 +29,8 @@ class HomeList extends Component {
                       city={ home.city }
                       price={ home.price }
                       areaHome={ home.areaHome }
-                      roomCount={ home.roomCount} />
+                      roomCount={ home.roomCount} 
+                      homeHover={ () => { this.props.homeHover(index) } }/>
               )
             })
           }

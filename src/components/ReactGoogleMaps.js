@@ -28,50 +28,31 @@ export const ReactGoogleMaps = withGoogleMap(props => (
   >
   {
     props.markers.map((marker, index) => {
-      console.log('marker: ', marker.position);
-      return (
-      <div key={ index }>
-        <Marker
-          {...marker}
-          oClick={props.handleMarkerClick}
-          onRightClick={() => props.onMarkerRightClick(index)}
-        ></Marker>
-        <OverlayView
-          position={ marker.position }
-          
-          /*
-          * An alternative to specifying position is specifying bounds.
-          * bounds can either be an instance of google.maps.LatLngBounds
-          * or an object in the following format:
-          * bounds={{
-          *    ne: { lat: 62.400471, lng: -150.005608 },
-          *    sw: { lat: 62.281819, lng: -150.287132 }
-          * }}
-          */
-          /*
-          * 1. Specify the pane the OverlayView will be rendered to. For
-          *    mouse interactivity, use `OverlayView.OVERLAY_MOUSE_TARGET`.
-          *    Defaults to `OverlayView.OVERLAY_LAYER`.
-          */
-          mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-          /*
-          * 2. Tweak the OverlayView's pixel position. In this case, we're
-          *    centering the content.
-          */
-          getPixelPositionOffset={getPixelPositionOffset}
-          /*
-          * 3. Create OverlayView content using standard React components.
-          */
-        >
-          <div style={STYLES.overlayView}>
-            <h1>OverlayView</h1>
-            <button>
-              I have been clicked
-            </button>
+      if (props.homes[index]) {
+        return (
+          <div key={ index }>
+            <Marker
+              { ...marker }
+              oClick={ props.handleMarkerClick }
+              onRightClick={ () => props.onMarkerRightClick(index) }
+            ></Marker>
+            <OverlayView
+              position={ marker.position }
+              mapPaneName={ OverlayView.OVERLAY_MOUSE_TARGET }
+              getPixelPositionOffset={ getPixelPositionOffset }
+            >
+              <div className="overlay" style={{opacity: props.homes[index].home.overlayOpacity}}>
+                <div className="overlay-img">
+                  <img src={ props.homes[index].home.imageUrl } alt=""/>
+                </div>
+                <div className="overlay-body">
+                <h3>{ props.homes[index].home.streetName + ' ' + props.homes[index].home.streetNumber }</h3>
+                </div>
+              </div>
+            </OverlayView>
           </div>
-        </OverlayView>
-      </div>
-      );
+        );
+      }
     })
   }
   </GoogleMap>

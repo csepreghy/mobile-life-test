@@ -86,3 +86,12 @@ sup {
   width: 50%;
   height: calc(100% - 60px);
   float: right; }
+
+.overlay {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc; }
+  .overlay-body h3 {
+    font-size: 16px;
+    color: #373c64;
+    font-weight: 500; }
