@@ -14,16 +14,12 @@ class Map extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log('did mount');
-  }
-
-  componentWillMount() {
-    console.log('will mount');
+  handleMarkerClick() {
+    console.log('marker clicked');
   }
 
   componentWillReceiveProps(props) {
-    console.log('will receive props, ', props);
+    // This is needed because we are waiting for a promise to be resolved
     this.setState({ homes: props.homes });
     
     for (let i = 0; i < props.homes.length; i++) {
@@ -45,7 +41,6 @@ class Map extends Component {
 
   render() {
     console.log('render');
-    console.log('this.state.homes: ', this.state.homes);
     return (
       <div className="map-container">
         <ReactGoogleMaps
