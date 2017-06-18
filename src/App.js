@@ -16,7 +16,8 @@ class App extends Component {
       homes: []
     }
 
-    this.homeHover = this.homeHover.bind(this);
+    this.homeMouseEnter = this.homeMouseEnter.bind(this);
+    this.homeMouseLeave = this.homeMouseLeave.bind(this);
   }
 
   componentWillMount() {
@@ -32,7 +33,7 @@ class App extends Component {
       });
   }
 
-  homeHover(i) {
+  homeMouseEnter(i) {
     // i is the index of the home that is hovered. And we know it matches in both components
     // because they derive from the same source.
     let homes = this.state.homes;
@@ -40,11 +41,19 @@ class App extends Component {
     this.setState({ homes: homes });
   }
 
+  homeMouseLeave(i) {
+    let homes = this.state.homes;
+    homes[i].home.overlayOpacity = 0;
+    this.setState({ homes: homes });
+  }
+
   render() {
     return (
       <div className="app-container">
         <Navbar />
-        <HomeList homeHover={ this.homeHover } homes={ this.state.homes }/>
+        <HomeList homes={ this.state.homes }
+                  homeMouseEnter={ this.homeMouseEnter }
+                  homeMouseLeave={ this.homeMouseLeave }/>
         <Map homes={ this.state.homes }/>
       </div>
     );

@@ -5,8 +5,11 @@ const loadPlaceholderImg = e => {
   e.target.src = '/no-house-photo.jpg'
 }
 
-const Home = ({ index, streetName, streetNumber, imageUrl, postalCode, city, price, areaHome, roomCount, homeHover }) => (
- <div className="list-item" key={ index } onMouseEnter={ () => { homeHover() } }>
+const Home = ({ index, streetName, streetNumber, imageUrl, postalCode, city, price, areaHome, roomCount, homeMouseEnter, homeMouseLeave }) => (
+ <div className="list-item" 
+      key={ index } 
+      onMouseEnter={ () => { homeMouseEnter() } } 
+      onMouseLeave={ () => { homeMouseLeave() } } >
     <div className="img-container">
       <div className="img-title-background"></div>
       <p>{ streetName + ' ' + streetNumber }</p>

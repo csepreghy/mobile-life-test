@@ -30,7 +30,8 @@ class HomeList extends Component {
                       price={ home.price }
                       areaHome={ home.areaHome }
                       roomCount={ home.roomCount} 
-                      homeHover={ () => { this.props.homeHover(index) } }/>
+                      homeMouseEnter={ () => { this.props.homeMouseEnter(index) } }
+                      homeMouseLeave={ () => { this.props.homeMouseLeave(index) } }/>
               )
             })
           }
