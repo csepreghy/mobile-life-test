@@ -1,13 +1,6 @@
 import React from 'react';
-import _ from 'underscore';
 import { withGoogleMap, GoogleMap, Marker, OverlayView } from 'react-google-maps';
 import mapStyles from '../config/mapStyles';
-
-const STYLES = {
-  mapContainer: {
-    height: `100%`,
-  }
-};
 
 const loadPlaceholderImg = e => {
   e.target.src = '/no-house-photo.jpg'
