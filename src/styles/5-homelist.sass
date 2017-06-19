@@ -24,11 +24,29 @@
 
 .home-list-container
   display: inline-block
+  position: relative
   width: 50%
   height: calc(100% - #{$navbar-height})
   float: left
   flex-wrap: wrap
-  overflow-y: auto
+  overflow-y: scroll
+  background-color: $grey
+
+  .no-match
+    display: block
+    position: absolute
+    width: 60%
+    transform: translate(-50%, -50%)
+    left: 50%
+    top: 50%
+    text-align: center
+
+    h4
+      font-size: 26px
+      margin-bottom: 15px
+    
+    p
+      font-size: 18px
 
   @media only screen and (max-width: $screen-xlg)
     width: 60%
@@ -43,7 +61,6 @@
     flex-wrap: wrap
     justify-content: space-around
     flex-direction: row
-    background-color: $grey
 
     .list-item
       width: 46%

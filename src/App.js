@@ -16,7 +16,8 @@ class App extends Component {
 
     this.state = {
       homes: [],
-      searchValue: ''
+      searchValue: '',
+      noMatchDisplay: 'none'
     }
 
     this.homeMouseEnter = this.homeMouseEnter.bind(this);
@@ -65,6 +66,8 @@ class App extends Component {
     let homes = this.fetchedHomes;
     let filter = e.target.value.toString().trim().toLowerCase();
     let filteredHomes = [];
+
+    this.setState({ noMatchDisplay: 'none' });
     
     if (filter === '') {
       this.setState({ searchValue: e.target.value, homes: this.fetchedHomes });
@@ -74,6 +77,9 @@ class App extends Component {
         if (home.home.city.toString().toLowerCase().indexOf(e.target.value) >= 0) {
           filteredHomes.push(home);
         }
+      }
+      if (filteredHomes.length === 0) {
+        this.setState({ noMatchDisplay: 'block' });
       }
       this.setState({ searchValue: e.target.value, homes: filteredHomes })
     }
@@ -102,7 +108,9 @@ class App extends Component {
         <HomeList homes={ this.state.homes }
                   homeMouseEnter={ this.homeMouseEnter }
                   homeMouseLeave={ this.homeMouseLeave }
-                  onMapClick={ this.onMapClick }/>
+                  onMapClick={ this.onMapClick }
+                  noMatchDisplay={ this.state.noMatchDisplay }
+                  searchedFor={ this.state.searchValue }/>
       </div>
     );
   }

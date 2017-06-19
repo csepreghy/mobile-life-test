@@ -12,6 +12,10 @@ class HomeList extends Component {
     return (
       <div className="home-list-container">
         <div className="title"></div>
+        <div className="no-match" style={{ display: this.props.noMatchDisplay }}>
+          <h4>No match found</h4>
+          <p>No city found for '{ this.props.searchedFor }'. Please make sure you typed in the city correctly</p>
+        </div>
         <div className="list-items-container">
           {
             this.props.homes.map((item, index) => {

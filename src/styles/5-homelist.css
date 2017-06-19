@@ -20,11 +20,26 @@
 
 .home-list-container {
   display: inline-block;
+  position: relative;
   width: 50%;
   height: calc(100% - 50px);
   float: left;
   flex-wrap: wrap;
-  overflow-y: auto; }
+  overflow-y: scroll;
+  background-color: #ebebeb; }
+  .home-list-container .no-match {
+    display: block;
+    position: absolute;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    text-align: center; }
+    .home-list-container .no-match h4 {
+      font-size: 26px;
+      margin-bottom: 15px; }
+    .home-list-container .no-match p {
+      font-size: 18px; }
   @media only screen and (max-width: 1200px) {
     .home-list-container {
       width: 60%; } }
@@ -37,8 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    flex-direction: row;
-    background-color: #ebebeb; }
+    flex-direction: row; }
     .home-list-container .list-items-container .list-item {
       width: 46%;
       margin-top: 15px;
