@@ -1,6 +1,6 @@
 ## Hey there!
 
-Welcome to my solution for the task given by MobileLife
+Welcome to my solution for the task given by MobileLife!
 
 To start the project you basically run:
 ```
@@ -20,4 +20,6 @@ Please use https://github.com/facebookincubator/create-react-app as the starting
 
 Send us a link with the source code for your solution on github and if possible a place to see it. Please don't use too much time on the exercise, it is more to get a basic idea of your coding skills and ways of thinking."
 
-Yeah... I clearly forgot the "Don't use too much time on the exercise" thing. :D Anyways, I hope you like it ;)  
+Yeah... I clearly forgot the "Don't use too much time on the exercise" thing. :D 
+
+Anyways, I hope you like it! ;)  
