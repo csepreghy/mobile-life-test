@@ -10,3 +10,11 @@ html, body, #the-universe, .app-container {
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
   color: #373c64; }
+
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-thumb {
+  width: 100%;
+  border-radius: 0;
+  background-color: #ccc; }
