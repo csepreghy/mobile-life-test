@@ -12,7 +12,7 @@ class Navbar extends Component {
       <div className="navbar-container">
         <div className="search-container">
           <input type="text" 
-                 placeholder="Search for city / district" 
+                 placeholder="Search for city" 
                  value={ this.props.searchValue }
                  onChange={ this.props.handleSearchValueChange }/>
           <img className="search-icon" src="/search-icon.svg" alt="Search icon"/>

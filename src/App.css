@@ -26,6 +26,10 @@ sup {
   .card:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
+.card-2 {
+  z-index: 300;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
 .navbar-container {
   height: 50px;
   width: 100%;
@@ -38,10 +42,14 @@ sup {
     .navbar-container .search-container input {
       border-radius: 0;
       height: 50px;
-      width: 240px;
+      width: 160px;
       font-size: 20px;
-      padding-left: 10px;
+      padding-left: 15px;
       border: 0; }
+      @media only screen and (max-width: 840px) {
+        .navbar-container .search-container input {
+          width: 140px;
+          font-size: 16px; } }
       .navbar-container .search-container input:focus {
         outline: none; }
   .navbar-container .profile-info-container {
@@ -54,6 +62,11 @@ sup {
     border-left: 1px solid #ababab;
     cursor: pointer;
     transition: 0.2s; }
+    @media only screen and (max-width: 667px) {
+      .navbar-container .profile-info-container {
+        width: 80px; }
+        .navbar-container .profile-info-container h4 {
+          display: none !important; } }
     .navbar-container .profile-info-container:hover {
       background-color: #efefef; }
       .navbar-container .profile-info-container:hover img {
@@ -69,6 +82,25 @@ sup {
       display: inline-block;
       font-weight: 400; }
 
+.divider-title {
+  width: 100%;
+  float: right;
+  height: 40px;
+  background-color: #990eff;
+  color: #fff;
+  position: relative;
+  display: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  @media only screen and (max-width: 840px) {
+    .divider-title {
+      display: block; } }
+  .divider-title h2 {
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
 .home-list-container {
   display: inline-block;
   width: 50%;
@@ -81,7 +113,8 @@ sup {
       width: 60%; } }
   @media only screen and (max-width: 840px) {
     .home-list-container {
-      width: 50%; } }
+      width: 100%;
+      height: 50%; } }
   .home-list-container .list-items-container {
     padding: 20px;
     display: flex;
@@ -95,7 +128,7 @@ sup {
       margin-bottom: 15px;
       background-color: #fff;
       cursor: pointer; }
-      @media only screen and (max-width: 840px) {
+      @media only screen and (max-width: 520px) {
         .home-list-container .list-items-container .list-item {
           width: 90%; } }
       .home-list-container .list-items-container .list-item .img-container {
@@ -152,7 +185,8 @@ sup {
       width: 40%; } }
   @media only screen and (max-width: 840px) {
     .map-container {
-      width: 50%; } }
+      width: 100%;
+      height: 50%; } }
 
 .overlay {
   display: none;

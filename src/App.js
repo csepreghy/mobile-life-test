@@ -72,10 +72,13 @@ class App extends Component {
       <div className="app-container">
         <Navbar searchValue={ this.state.searchValue }
                 handleSearchValueChange={ this.handleSearchValueChange }/>
+        <Map homes={ this.state.homes }/>
+        <div className="divider-title card-2">
+          <h2>List of Homes</h2>
+        </div>
         <HomeList homes={ this.state.homes }
                   homeMouseEnter={ this.homeMouseEnter }
                   homeMouseLeave={ this.homeMouseLeave }/>
-        <Map homes={ this.state.homes }/>
       </div>
     );
   }

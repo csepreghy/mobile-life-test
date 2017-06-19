@@ -11,10 +11,14 @@
     .navbar-container .search-container input {
       border-radius: 0;
       height: 50px;
-      width: 240px;
+      width: 160px;
       font-size: 20px;
-      padding-left: 10px;
+      padding-left: 15px;
       border: 0; }
+      @media only screen and (max-width: 840px) {
+        .navbar-container .search-container input {
+          width: 140px;
+          font-size: 16px; } }
       .navbar-container .search-container input:focus {
         outline: none; }
   .navbar-container .profile-info-container {
@@ -27,6 +31,11 @@
     border-left: 1px solid #ababab;
     cursor: pointer;
     transition: 0.2s; }
+    @media only screen and (max-width: 667px) {
+      .navbar-container .profile-info-container {
+        width: 80px; }
+        .navbar-container .profile-info-container h4 {
+          display: none !important; } }
     .navbar-container .profile-info-container:hover {
       background-color: #efefef; }
       .navbar-container .profile-info-container:hover img {

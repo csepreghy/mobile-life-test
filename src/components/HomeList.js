@@ -11,6 +11,7 @@ class HomeList extends Component {
   render() {
     return (
       <div className="home-list-container">
+        <div className="title"></div>
         <div className="list-items-container">
           {
             this.props.homes.map((item, index) => {
