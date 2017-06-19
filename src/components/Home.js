@@ -6,7 +6,7 @@ const loadPlaceholderImg = e => {
 }
 
 const Home = ({ index, streetName, streetNumber, imageUrl, postalCode, city, price, areaHome, roomCount, homeMouseEnter, homeMouseLeave }) => (
- <div className="list-item" 
+ <div className="list-item card" 
       key={ index } 
       onMouseEnter={ () => { homeMouseEnter() } } 
       onMouseLeave={ () => { homeMouseLeave() } } >
