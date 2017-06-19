@@ -22,6 +22,8 @@ class App extends Component {
     this.homeMouseEnter = this.homeMouseEnter.bind(this);
     this.homeMouseLeave = this.homeMouseLeave.bind(this);
     this.handleSearchValueChange = this.handleSearchValueChange.bind(this);
+    this.handleMarkerClick = this.handleMarkerClick.bind(this);
+    this.onMapClick = this.onMapClick.bind(this);
   }
 
   componentWillMount() {
@@ -47,6 +49,16 @@ class App extends Component {
     this.setState({ homes: homes });
   }
 
+  handleMarkerClick(i) {
+    let homes = this.fetchedHomes;
+    for (let i = 0; i < homes.length; i++) {
+      homes[i].home.overlayDisplay = 'none';
+    }
+
+    homes[i].home.overlayDisplay = 'block';
+    this.setState({ homes: homes })
+  }
+
   handleSearchValueChange(e) {
     //Returns home if the search term appears anywhere in the city / district name
 
@@ -67,18 +79,30 @@ class App extends Component {
     }
   }
 
+  onMapClick() {
+    console.log('hali');
+    let homes = this.fetchedHomes;
+    for (let i = 0; i < homes.length; i++) {
+      homes[i].home.overlayDisplay = 'none';
+    }
+    this.setState({ homes: homes })
+  }
+
   render() {
     return (
       <div className="app-container">
         <Navbar searchValue={ this.state.searchValue }
                 handleSearchValueChange={ this.handleSearchValueChange }/>
-        <Map homes={ this.state.homes }/>
+        <Map homes={ this.state.homes }
+             handleMarkerClick={ this.handleMarkerClick }
+             onMapClick={ this.onMapClick }/>
         <div className="divider-title card-2">
           <h2>List of Homes</h2>
         </div>
         <HomeList homes={ this.state.homes }
                   homeMouseEnter={ this.homeMouseEnter }
-                  homeMouseLeave={ this.homeMouseLeave }/>
+                  homeMouseLeave={ this.homeMouseLeave }
+                  onMapClick={ this.onMapClick }/>
       </div>
     );
   }

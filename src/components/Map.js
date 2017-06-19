@@ -14,10 +14,6 @@ class Map extends Component {
     }
   }
 
-  handleMarkerClick() {
-    console.log('marker clicked');
-  }
-
   // This is needed because we are waiting for a promise to be resolved
   componentWillReceiveProps(props) {
     let updatedHomes = [];
@@ -52,10 +48,11 @@ class Map extends Component {
             <div style={{ height: '100%' }} />
           }
           onMapLoad={_.noop}
-          onMapClick={_.noop}
+          onMapClick={this.props.onMapClick}
           markers={markers}
           homes={this.state.homes}
           onMarkerRightClick={_.noop}
+          handleMarkerClick={ this.props.handleMarkerClick }
         />
       </div>
     );

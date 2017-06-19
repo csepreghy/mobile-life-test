@@ -15,7 +15,7 @@ export const ReactGoogleMaps = withGoogleMap(props => (
     ref={props.onMapLoad}
     defaultZoom={11}
     defaultCenter={{ lat: 55.69, lng: 12.539 }}
-    onClick={props.onMapClick}
+    onClick={ () => props.onMapClick() }
     defaultOptions={{ styles: mapStyles }}
   >
   {
@@ -25,7 +25,7 @@ export const ReactGoogleMaps = withGoogleMap(props => (
           <div key={ index }>
             <Marker
               { ...marker }
-              oClick={ props.handleMarkerClick }
+              onClick={ () => props.handleMarkerClick(index) }
               onRightClick={ () => props.onMarkerRightClick(index) }
             ></Marker>
             <OverlayView
