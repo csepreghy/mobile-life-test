@@ -15,6 +15,12 @@ class Navbar extends Component {
                  placeholder="Search for city / district" 
                  value={ this.props.searchValue }
                  onChange={ this.props.handleSearchValueChange }/>
+          <img className="search-icon" src="/search-icon.svg" alt="Search icon"/>
+        </div>
+        <img src="/logo.svg" alt="Sunday company logo"/>
+        <div className="profile-info-container">
+          <img src="/profile.jpg" alt="Profle picture"/>
+          <h4>Andrew Chepreghy</h4>
         </div>
       </div>
     );

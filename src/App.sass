@@ -30,6 +30,9 @@ sup
 
 // 4 - Objects
 
+.search-icon
+
+
 // 5 - Components
 
 //Navbar 
@@ -37,13 +40,53 @@ sup
 .navbar-container
   height: $navbar-height
   width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
   
   .search-container
+    display: flex
+    align-content: center
+
     input
       border-radius: 0
+      height: $navbar-height
+      width: 240px
+      font-size: 20px
+      padding-left: 10px
+      border: 0
     
       &:focus
         outline: none
+  
+  .profile-info-container
+    height: 100%
+    display: flex
+    align-items: center
+    padding-right: 20px
+    padding-left: 20px
+    border-left: 1px solid #ababab
+    cursor: pointer
+    transition: 0.2s
+
+    &:hover
+      background-color: #efefef
+
+      & img
+        width: 40px
+      
+    img
+      width: 35px
+      border-radius: 100%
+      border: 3px solid $secondary-color
+      display: inline-block
+      margin-right: 10px
+      transition: 0.2s
+    
+    h4
+      display: inline-block
+      font-weight: 400
+
 
 //Home List
 
