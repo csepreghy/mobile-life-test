@@ -88,9 +88,35 @@ sup {
   float: right; }
 
 .overlay {
+  display: none;
   width: 300px;
-  background-color: #fff;
-  border: 1px solid #ccc; }
+  background-color: #fff; }
+  .overlay .overlay-img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    border-radius: 5px;
+    border: 3px solid #990eff; }
+    .overlay .overlay-img p {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      color: #fff;
+      z-index: 110;
+      font-size: 16px; }
+    .overlay .overlay-img .img-title-background {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 30px;
+      background-color: #990eff;
+      opacity: 1;
+      z-index: 100; }
   .overlay-body h3 {
     font-size: 16px;
     color: #373c64;

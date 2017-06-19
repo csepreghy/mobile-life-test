@@ -13,7 +13,7 @@ class App extends Component {
     super();
 
     this.state = {
-      homes: []
+      homes: [],
     }
 
     this.homeMouseEnter = this.homeMouseEnter.bind(this);
@@ -24,26 +24,21 @@ class App extends Component {
     axios.get('./homes.json')
       .then((data) => {
         let homes = data.data.homes
-        for (let i = 0; i < homes.length; i++) {
-          let home = homes[i];
-          home.home.overlayOpacity = 0;          
-        }
-
         this.setState({ homes: data.data.homes });
       });
   }
-
+  
   homeMouseEnter(i) {
     // i is the index of the home that is hovered. And we know it matches in both components
     // because they derive from the same source.
     let homes = this.state.homes;
-    homes[i].home.overlayOpacity = 1;
-    this.setState({ homes: homes });
+    homes[i].home.overlayDisplay = 'block';
+    this.setState({ homes: homes })
   }
 
   homeMouseLeave(i) {
     let homes = this.state.homes;
-    homes[i].home.overlayOpacity = 0;
+    homes[i].home.overlayDisplay = 'none';
     this.setState({ homes: homes });
   }
 
