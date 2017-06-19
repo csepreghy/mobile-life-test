@@ -7,7 +7,7 @@ $secondary-color: #f06672
 $text-color: #373c64
 $grey: #ebebeb
 
-$navbar-height: 60px
+$navbar-height: 50px
 
 // 2 - Generic
 
@@ -37,6 +37,13 @@ sup
 .navbar-container
   height: $navbar-height
   width: 100%
+  
+  .search-container
+    input
+      border-radius: 0
+    
+      &:focus
+        outline: none
 
 //Home List
 

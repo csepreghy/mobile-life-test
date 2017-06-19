@@ -15,13 +15,17 @@ sup {
   font-size: 10px; }
 
 .navbar-container {
-  height: 60px;
+  height: 50px;
   width: 100%; }
+  .navbar-container .search-container input {
+    border-radius: 0; }
+    .navbar-container .search-container input:focus {
+      outline: none; }
 
 .home-list-container {
   display: inline-block;
   width: 50%;
-  height: calc(100% - 60px);
+  height: calc(100% - 50px);
   float: left;
   flex-wrap: wrap;
   overflow-y: auto; }
@@ -84,7 +88,7 @@ sup {
 .map-container {
   display: inline-block;
   width: 50%;
-  height: calc(100% - 60px);
+  height: calc(100% - 50px);
   float: right; }
 
 .overlay {

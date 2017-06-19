@@ -14,7 +14,7 @@ const loadPlaceholderImg = e => {
 }
 
 function getPixelPositionOffset(width, height) {
-  return { x: -(width / 2), y: -(height + 20) };
+  return { x: -(width / 2), y: -(height + 18) };
 }
 
 export const ReactGoogleMaps = withGoogleMap(props => (

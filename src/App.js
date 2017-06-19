@@ -9,22 +9,27 @@ import HomeList from './components/HomeList';
 
 class App extends Component {
 
+  fetchedHomes = [];
+
   constructor(props) {
     super();
 
     this.state = {
       homes: [],
+      searchValue: ''
     }
 
     this.homeMouseEnter = this.homeMouseEnter.bind(this);
     this.homeMouseLeave = this.homeMouseLeave.bind(this);
+    this.handleSearchValueChange = this.handleSearchValueChange.bind(this);
   }
 
   componentWillMount() {
     axios.get('./homes.json')
       .then((data) => {
         let homes = data.data.homes
-        this.setState({ homes: data.data.homes });
+        this.fetchedHomes = homes
+        this.setState({ homes: homes });
       });
   }
   
@@ -42,10 +47,31 @@ class App extends Component {
     this.setState({ homes: homes });
   }
 
+  handleSearchValueChange(e) {
+    //Returns home if the search term appears anywhere in the city / district name
+
+    let homes = this.fetchedHomes;
+    let filter = e.target.value.toString().trim().toLowerCase();
+    let filteredHomes = [];
+    
+    if (filter === '') {
+      this.setState({ searchValue: e.target.value, homes: this.fetchedHomes });
+    } else {
+      for (let i  = 0; i < homes.length; i++) {
+        let home = homes[i];
+        if (home.home.city.toString().toLowerCase().indexOf(e.target.value) >= 0) {
+          filteredHomes.push(home);
+        }
+      }
+      this.setState({ searchValue: e.target.value, homes: filteredHomes })
+    }
+  }
+
   render() {
     return (
       <div className="app-container">
-        <Navbar />
+        <Navbar searchValue={ this.state.searchValue }
+                handleSearchValueChange={ this.handleSearchValueChange }/>
         <HomeList homes={ this.state.homes }
                   homeMouseEnter={ this.homeMouseEnter }
                   homeMouseLeave={ this.homeMouseLeave }/>

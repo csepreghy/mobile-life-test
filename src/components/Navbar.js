@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Navbar = () => (
- <div className="navbar-container">Navbar</div>
-);
+class Navbar extends Component {
+
+  constructor(props) {
+    super();
+
+  }
+
+  render() {
+    return (
+      <div className="navbar-container">
+        <div className="search-container">
+          <input type="text" 
+                 placeholder="Search for city / district" 
+                 value={ this.props.searchValue }
+                 onChange={ this.props.handleSearchValueChange }/>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Navbar;
