@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+.navbar-container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navbar-container .search-container {
+    display: flex;
+    align-content: center; }
+    .navbar-container .search-container input {
+      border-radius: 0;
+      height: 50px;
+      width: 240px;
+      font-size: 20px;
+      padding-left: 10px;
+      border: 0; }
+      .navbar-container .search-container input:focus {
+        outline: none; }
+  .navbar-container .profile-info-container {
+    height: 100%;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #ababab;
+    cursor: pointer;
+    transition: 0.2s; }
+    .navbar-container .profile-info-container:hover {
+      background-color: #efefef; }
+      .navbar-container .profile-info-container:hover img {
+        width: 40px; }
+    .navbar-container .profile-info-container img {
+      width: 35px;
+      border-radius: 100%;
+      border: 3px solid #f06672;
+      display: inline-block;
+      margin-right: 10px;
+      transition: 0.2s; }
+    .navbar-container .profile-info-container h4 {
+      display: inline-block;
+      font-weight: 400; }

@@ -1,0 +1,88 @@
+@import '1-settings.sass'
+
+//Home List
+
+.home-list-container
+  display: inline-block
+  width: 50%
+  height: calc(100% - #{$navbar-height})
+  float: left
+  flex-wrap: wrap
+  overflow-y: auto
+
+  @media only screen and (max-width: $screen-xlg)
+    width: 60%
+  
+  @media only screen and (max-width: $screen-md)
+    width: 50%
+
+  .list-items-container
+    padding: 20px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    flex-direction: row
+    background-color: $grey
+
+    .list-item
+      width: 46%
+      margin-top: 15px
+      margin-bottom: 15px
+      background-color: #fff
+      cursor: pointer
+
+      @media only screen and (max-width: $screen-md)
+        width: 90%
+
+      .img-container
+        width: 100%
+        position: relative
+        overflow: hidden
+        font-size: 0 //Comment this line out and see what happens with the images in the grid.
+        //Gotta love CSS sometimes
+
+        .img-title-background
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          height: 30px
+          background-color: $primary-color
+          opacity: 0.6
+          z-index: 100
+        
+        p
+          position: absolute
+          bottom: 6px
+          left: 8px
+          color: #fff
+          z-index: 110
+          font-size: 16px
+
+        img
+          width: 100%
+          transition: 0.25s
+
+      &__content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100px
+          
+        &-body
+          padding: 8px
+          display: flex
+          flex-direction: column
+          justify-content: space-around
+          
+          h3
+            font-size: 16px
+            color: #373c64
+            font-weight: 500
+      
+      &:hover
+        img
+          transform: scale(1.1)
