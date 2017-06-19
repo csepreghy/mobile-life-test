@@ -82,7 +82,8 @@ sup {
       width: 46%;
       margin-top: 15px;
       margin-bottom: 15px;
-      background-color: #fff; }
+      background-color: #fff;
+      cursor: pointer; }
       .home-list-container .list-items-container .list-item .img-container {
         width: 100%;
         position: relative;
