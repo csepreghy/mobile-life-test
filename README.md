@@ -16,10 +16,4 @@ The website in its entirety was designed and developed by Andrew Chepreghy based
 
 Display a list of properties from the property data. Style the items in the list in an interesting way, feel free to add animations.
 
-Please use https://github.com/facebookincubator/create-react-app as the starting point.
-
-Send us a link with the source code for your solution on github and if possible a place to see it. Please don't use too much time on the exercise, it is more to get a basic idea of your coding skills and ways of thinking."
-
-Yeah... I clearly forgot the "Don't use too much time on the exercise" thing. :D 
-
-Anyways, I hope you like it! ;)  
+Please use https://github.com/facebookincubator/create-react-app as the starting point. 
